@@ -1,6 +1,6 @@
 package com.Java020.MonieFlex.domain.enums;
 
-public enum Status {
+public enum CardStatus {
     ACTIVE,
     INACTIVE,
     BLOCKED,

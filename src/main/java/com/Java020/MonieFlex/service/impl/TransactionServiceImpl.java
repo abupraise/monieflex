@@ -1,4 +1,8 @@
 package com.Java020.MonieFlex.service.impl;
 
-public class TransactionServiceImpl {
+import com.Java020.MonieFlex.service.TransactionService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class TransactionServiceImpl implements TransactionService {
 }

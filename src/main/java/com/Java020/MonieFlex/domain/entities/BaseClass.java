@@ -24,10 +24,10 @@ public abstract class BaseClass {
     private Long id;
 
     @CreatedDate
-    private LocalDateTime dateCreated;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
-    private LocalDateTime dateModified;
+    private LocalDateTime updatedAt;
 
     @Override
     public boolean equals(Object obj) {
@@ -45,10 +45,10 @@ public abstract class BaseClass {
     @PrePersist
     @PreUpdate
     public void prePersist(){
-        if(dateCreated == null){
-            dateCreated = LocalDateTime.now();
+        if(createdAt == null){
+            createdAt = LocalDateTime.now();
         }
-        dateModified = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
 
     }
 }

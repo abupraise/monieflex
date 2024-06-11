@@ -1,7 +1,7 @@
 package com.Java020.MonieFlex.domain.entities;
 
 import com.Java020.MonieFlex.domain.enums.CardType;
-import com.Java020.MonieFlex.domain.enums.Status;
+import com.Java020.MonieFlex.domain.enums.CardStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,7 +19,7 @@ public class Card extends BaseClass {
     private String CVV;
     private CardType cardType;
     private LocalDate expirationDate;
-    private Status status;
+    private CardStatus cardStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_number")
