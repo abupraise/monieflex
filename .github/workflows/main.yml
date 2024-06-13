@@ -16,15 +16,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: 'temurin' # Required input for the distribution parameter
 
       - name: Cache Maven packages
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -48,3 +49,7 @@ jobs:
           context: .
           push: true
           tags: abupraise/monieflex:latest
+
+      - name: Run Container
+        run: |
+          docker run -d -p 8080:8080 abupraise/monieflex:latest
